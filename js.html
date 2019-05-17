@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="">
+   <title></title>
+   <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+   <link rel="stylesheet" href="css/stylejs.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+   <!-- Optional theme -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+   <nav style="
+      position:fixed; 
+      top:0px; 
+      left:0px;
+      background: #3c3c3c;
+      height: 100%;
+      width: 250px;
+      z-index: 10;
+      display:block;
+      text-align: center;
+      
+      ">
+      <div style="
+      margin-top: 8px;
+      
+      ">
+
+         <a href="#komentarz" style="display:block "><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Komentarz</button></a>
+
+         <a href="#zmienna" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Zmienna</button></a>
+
+         <a href="#typyDanych" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%; ">Typy
+               Danych</button></a>
+
+         <a href="#operatory" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Operatory</button></a>
+
+         <a href="#wlasciwosci" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Właściwości</button></a>
+
+         <a href="#metody" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Metody</button></a>
+
+
+
+         <a href="#tablice" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Tablice</button></a>
+
+         <a href="#metodyWtablicy" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Metody
+               w Tablicy</button></a>
+
+         <a href="#if" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">IF</button></a>
+
+         <a href="#switch" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Switch</button></a>
+
+         <a href="#operatorWarunkowy" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Operator
+               warunkowy</button></a>
+
+         <a href="#operatorWarunkowySuperString" style="display:block"><button class="btn btn-outline-success"
+               type="button" style="margin-bottom: 10px; width: 90%;">Operator Warunkowy SUPER String</button></a>
+
+         <a href="#petle" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Pętle</button></a>
+
+         <a href="#funkcje" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Funkcje</button></a>
+
+         <a href="#callback" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Callback</button></a>
+
+         <a href="#rest" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Rest</button></a>
+
+         <a href="#foreach" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Foreach</button></a>
+
+         <a href="#obiekty" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">Obiekty</button></a>
+
+         <a href="#dom" style="display:block"><button class="btn btn-outline-success" type="button"
+               style="margin-bottom: 10px; width: 90%;">DOM</button></a>
+
+
+
+      </div>
+   </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+   <div id="right">
+      <div class="lineup" id="komentarz">
+         <h1>Komentarz</h1>
+         <p>
+            // ctrl + / - <span>jednioliniowy</span><br>
+            // alt + shift + a - <span>kilkuliniowy</span>
+         </p>
+      </div>
+      <div class="lineup" id="zmienna">
+         <h1>Zmienna</h1>
+         <p>
+            <span>let result = 2 + 2;</span> // zmienna, która się zmienia<br>
+            <span>const stala = 2; </span>// zmienna stała, której nie można edytować, najpierw tą, jeżeli nie
+            zmieniamy
+            zmiennej<br>
+            <span>var rezult2 = 5; </span>// obsługuje stare przeglądarki, najlepiej nie stosować
+         </p>
+      </div>
+      <div class="lineup" id="typyDanych">
+         <h1>Typy danych</h1>
+         <p>
+            <span>typeof "text";</span> //zwraca nam informacje o typie console.log();
+         </p>
+      </div>
+      <div class="lineup" id="operatory">
+         <h1>Operatory</h1>
+         <p>
+            <span>let modulo</span> = 10 % 9;<br>
+
+            <span>let potega = 2 ** 5; </span>//Potęga<br>
+
+            <span>"tekst1" == "tekst2"; </span>//Porównanie<br>
+
+            <span>"2" === 2;</span> //Porównanie bez konwersji na string itp<br>
+
+            <span>100 != 101; </span>//Różne od<br>
+
+            <span>"100" !== 101; </span>//Różne od bez konwersji<br>
+
+            <span>!(2); </span>//Logiczne zaprzeczenie - zamienia z true na false itp - zamienia na typ boolean i
+            odwraca<br>
+            <span>!!(2); </span>// - podwójna negacja zwraca true lub false.<br>
+            <span>i</span> &&<br>
+            <span>lub </span>||<br>
+         </p>
+      </div>
+
+      <div class="lineup" id="wlasciwosci">
+         <h1>WŁAŚCIWOŚCI</h1>
+         <p>
+            <span>zmienna.length; </span>// - długość zmiennej<br>
+            <span>zmienna['length']; </span>// - długość zmiennej 2 sposób<br>
+            <span>zmienna[2]; </span>// - pobieranie konkretnego znaku<br>
+            <span>zmienna['2']; </span>// - pobieranie konkretnego znaku
+         </p>
+      </div>
+
+      <div class="lineup" id="metody">
+         <h1>METODY</h1>
+         <p>
+            <span>zmienna.toUpperCase(); </span>// - powiększa wszystkie litery na duże<br>
+            <span>zmienna.toLowerCase(); </span>// - pomniejsza wszystkie litery na małe<br>
+            <span>zmienna.toFixed(); </span>// - zaokrąglenie liczby .toFixed(1) - do 1 miejsca po przecinku i robi
+            stringa z zmiennej<br>
+            <span>zmienna.toString(); </span>// - konwersja liczby na typ string<br>
+            <span>zmienna.toString(2); </span>// - konwersja liczby na typ string w systemie dwójkowym<br>
+            <span>String(1000); </span>// - zamiana liczby na stringa<br>
+            <span>Number('1000'); </span>// - zamiana stringa na liczbę<br>
+            <span>zmienna.toExponential(); </span>// - zamienia liczbę na notacje naukową w stringu<br>
+            <span>zmienna.indexOf('ś'); </span>// - czy występuje w zmiennej litera ś, i zwraca na którym miejscu<br>
+            <span>zmienna.lastIndexOf('d'); </span>//czy występuje w tekscie litera d OD KOŃCA SZUKA A INDEX OD
+            POCZĄTKU i gdzie występuje albo -1, jeżeli nie.<br>
+            <span>zmienna.charAt(2); </span>// - pobieranie odpowiedniego znaku w tym przypadku 3 znaku<br>
+            <span>zmienna.concat(zmienna2 / "text"); </span>// - łączenie ze sobą stringów<br>
+            <span>zmienna.includes('o'); </span>// - sprawdza czy w danym tekscie występuje dany znak, jeżeli tak true,
+            nie to false<br>
+            <span>zmienna.trim(); </span>// - usuwa białe znaki z tekstu na krańcach<br>
+            <span>zmienna.repeat(5); </span>// - kopiuje zmienną 5 razy<br>
+            <span>zmienna.slice(wartość1, wartość2); </span>// - wycinanie zawartości. wartość1 - od jakiego indexu
+            zaczynamy wycinać, wartość2 - gdzie ma się skończyć wycinanie i na jakim indexie ale zawsze nie jest on
+            wliczany w wycięcie tzw. index 5 i wycina nam do indexu 4<br>
+            <span>const zmienna = "tekst \n tekst"; </span>// - pisanie tekst w 2 liniach pod sobą<br>
+            <span>const superText = `w tekscie mozna pisać ' oraz " a jak się robi enter to zapamiętuje to`; </span>//
+            jak w tekscie<br>
+            <span>Boolean(zmienna);</span>
+            /* - sprawdza czy w danej zmiennej występuje jakiś tekst i true albo false zwraca, Objekt zawsze zwraca
+            true, sprawdza zależności 2>=2, gdy podamy tablice zwraca zawsze true nawet jak jest pusta, <br>
+            ZWRACA FALS GDY:<br>
+            - pusty string;<br>
+            - NaN;<br>
+            - Infinity; - TRUE<br>
+            - null;<br>
+            - undefined; */<br>
+            <span>zmienna.split('', wartosc1); </span>// - Tworzy ze stringa tablice. Z podanego słowa bierze każdą
+            litere i ją przypisuje do odpowiedniego indexu. Spacje też bierze pod uwage. Jeżeli w argumencie ''
+            napiszemy spacje to nam oddziele słowa od siebie a spacje potraktuje jako odzielenie od siebie indexów.
+            Element w '' jest elementem wydzielenia i może być to cokolwiek czyliu przecinek itp. Wartosc1 odpowiada za
+            ilość elementów w tablicy. Jeżeli go nie ma to nie ma on ograniczenia i robi to końca tekstu<br>
+         </p>
+      </div>
+
+
+
+      <div class="lineup">
+         <h1>Przypisywanie wartości po metodzie/właściwości</h1>
+         <p>
+            <span> const txt</span> = "coś tam";<br>
+            <span>const newTxt</span> = txt.toUpperCase();
+         </p>
+      </div>
+
+      <div class="lineup" id="obiekty">
+         <h1>Obiekty - nie da się sprawdzić przez typeof itp. <br>Tworzenie kopi obiektu w oparciu o daną zmienną</h1>
+         <p>
+            <span>const userName = new String("Jagienka"); </span>// - tworzy obiekt string<br>
+            <span>const userID = new Number(2);</span> // - tworzy obiekt number<br>
+            <span>const famale = new Boolean(true); </span>// - tworzy obiekt boolean
+         </p>
+      </div>
+
+
+
+      <div class="lineup" id="tablice">
+         <h1>TABLICE - są to obiekty, ZAWSZE CONST <br>o ile nie chcemy tablicy zmienić na np stringa.<br> Moze być let
+            ale
+            wtedy możemy nadpisać tablice na inną zmienną</h1>
+         <p>
+            <span>const zmienna </span>= ["wartosc1", "wartosc2", ["jeden", "dwa"], null];<br>
+            <span>zmiennaWartosc[2] </span>= 'wartosc3';<br><br>
+
+            //Konstruktor - pusta tablica // inna wersja tworzenia tablicy - gorsza<br>
+            <span>const gameItems = new Array();</span>
+            //Konstruktor z uzupełnionymi elementami // inna wersja tworzenia tablicy - gorsza<br>
+            <span>const colors = new Array("red", "blue");</span>
+            //Przypisywanie kopi wartości<br>
+            <span>const popularName = nameList[2];</span><br><br>
+
+            //Usuwanie elementów z tablicy<br>
+            <span>delete nameList[2]; //</span> - usuwanie elementu na miejscu 3 w tablicy oraz jej nie skraca<br>
+            <span>nameList.length = 3;</span> // - ucinanie tablicy do 3 elementów<br>
+            <span>nameList.length = 0;</span> // - zerowanie tablicy<br><br>
+
+            //Szybkie tworzenie długiej tablicy<br>
+            <span>const longArray = [];</span><br>
+            <span>longArray.length = 100;</span>// - Tworzenie tablicy o długości 100 miejsc<br>
+            <span>longArray.length += 2; </span>// - dodawanie 2 miejsc w tablicy<br><br>
+
+            //Odwoływanie się do ostatniego elementu długiej tablicy<br>
+            <span>longArray[longArray.length - 1];</span><br><br>
+
+            //Dodawanie kolejnego elementu w tablicy<br>
+            <span>longArray[longArray.length] = "Tokio";</span><br><br>
+
+            <span>longArray instanceof Array; </span>// sprawdzanie czy zmienna jest tablicą<br>
+            <span>longArray instanceof Number;</span> // sprawdzanie czy zmienna jest number<br>
+            <span>longArray instanceof String; </span>// sprawdzanie czy zmienna jest string<br>
+            <span>longArray instanceof Function; </span>// sprawdzanie czy zmienna jest funkcją<br><br>
+
+            <span>Array.isArray(longArray);</span> // - sprawdza czy zmienna jest tablica NAJLEPSZY SPOSÓB<br><br>
+
+            //Usuwanie tablicy w LET / oraz każdy link który przypisaliśmy do tablicy trzeba usunąć<br>
+            z<span>mienna = zmienna2 = null;</span><br><br>
+
+            //DESTRUKTURYZACJA - wyjmowanie wartości z tablicy i przypisowanie ich do zmiennych!!!<br>
+            <span>const [nameUser, idUser, ageUser] = ["Sławoj", 210, 54];</span> // do zmiennych zawartych po lewej
+            stronie przypisywane są zmienne w tablicy po prawej stronie. Czyli np: nameUser = "Sławoj"; itp..<br><br>
+
+            <span>const game = [120, 87, "dobry wujek"];</span><br>
+            <span>let [time, points, name] = game;</span> // - przypisanie zmiennych 2 sposób<br>
+         </p>
+      </div>
+
+      <div class="lineup" id="metodyWtablicy">
+         <h1>METODY W TABLICY</h1>
+         <p>
+            <span>const tablica </span>= ['Marek', 'Darel', 'Marcel'];<br>
+            <span>const tablica2 </span>= ['Alicja', 'Weronika', 'Milena'];<br><br>
+
+            <span>tablica.push("Aleksandra"); </span>// - dodawanie nowego elementu na końcu tablicy i zwraca długość
+            tablicy<br>
+            <span>tablica.unshift("Tomas");</span> // - dodanie nowego elementu na początku tablicy i zwraca długość
+            tablicy<br>
+            <span>tablica.pop();</span> // - usuwanie z tablicy ostatni element wraz z indeksem i ostatni element jest
+            zwracany, czyli możemy go przypisać do innej zmiennej zmienna = tablica.pop();<br>
+            <span>tablica.shift(); </span>// - usuwanie z tablicy pierwszy element wraz z indeksem i pierwszy element
+            jest
+            zwracany, czyli możemy go przypisać do innej zmiennej zmienna = tablica.shift();<br>
+            <span>const nowaTablica = tablica.concat(tablica2 / ["coś"], "cos2");</span> // - łączenie ze sobą 2 tablic
+            oraz przypisanie ich do nowej zmiennej, ponieważ ta komenda nie wpływa na istniejące tablice<br>
+            <span>const nowaTablica = [...tablica, ...tablica2]; </span>// metoda spreed czyli łączy 2 tablice ze sobą
+            przy pomocy 3 kropek przypisuje wszystkie wartościz danej tablicy<br>
+            <span>const nowaTablica = [...tablica, ...tablica2, "morski"];</span> // łączenie tablic i dodawanie
+            zmiennej
+            jak wyżej<br>
+            <span>tablica.slice(wartosc1, wartosc2); </span>// - tworzy nową tablice od jakiegoś argumentu do jakiegoś.
+            Wartosc1 - od jakiego indexu mamy przycinac, wartosc2 - do jakiego indexu mamy przycinać ale bez niego. Ta
+            metoda zwraca nową przyciętą tablice a nie jako link referencyjny. Może być tylko wartosc1 bez wartosc2<br>
+            <span>tablica.slice(-3); </span>// tworzy nową tablicę z 3 indexami od końca<br>
+            <span>tablica.splice(wartosc1, wartosc2);</span> // - Modyfikuje naszą dotychczasową tablce. Usuwa nam
+            indexy
+            w tablicy. wartosc1 - od którego indexu zaczynamy usuwać, wartosc2 - ILE elementów mamy usunąć. Jeżeli mamy
+            wartosc1 tylko to usuwa wszystko od danego indexu. tablica.splice(0); - czyści nam tablice. Zwraca nam
+            wszystkie elementy które zostały usunięte.<br>
+            <span>tablica.splice(wartosc1, wartosc2, nowaWartosc);</span> // - zastępuje nam usunięte elementy nowymi
+            elementami. Usuwa od indexu wartosc1 i tyle wartosci ile mamy w wartosc2 oraz dodaje w miejsce usuniętych
+            indexów nowaWartość np: "hamster". Zwraca nam wszystkie elementy które zostały usunięte. Nowych wartości
+            może
+            być duzo.<br>
+            <span>tablica.splice(2, 0, "rat"); </span>// - Dodawanie wartości. Jeżęli napiszemy 0 w ilości usuniętych
+            indexów to nam wstawia "rat" do 2 indexuw tablicy a reszte przesówa. Zwraca co zostało usunięte - czyli
+            pustą
+            tablice.<br>
+            <span>tablica.sort(); </span>// - sortuje nam tablice alfabetycznie. Zmienia nam dotychczasową tablice.
+            Zwraca
+            nam również tablice posortowaną.<br>
+            <span>tablica.indexOf("kanarek"); </span>// - sprawdza czy w danej tablicy występuje dana wartość. Zwraca
+            nam
+            na którym indexie metoda znalazła dane słowo. Jezeli nie znajdzie to zwraca -1.<br>
+            <span>tablica.lastIndexOf(); </span>// - sprawdza od końca tablicy czy w danej tablicy występuje dana
+            wartość.
+            Zwraca nam na którym indexie metoda znalazła dane słowo. Jezeli nie znajdzie to zwraca -1.<br>
+            <span>tablica.includes(); </span>// - sprawdza czy w danej tablicy zawarte jest dane słowo. Jeżeli jest
+            część
+            słowa to uznaje za false. Zwraca true lub false.<br>
+            <span>tablica.join(",");</span> // - pozwala stworzyć z tablicy stringa domyślnie oddzielony przecinkami,
+            ewentualnie w " \n - przeniesienie do nowej linii" przypisać odpowiednie oddzielenie. Pracuje na tablicy i
+            zwraca nowego stringa.<br>
+            <span>tablica.reverse(); </span>// - odwraca nam kolejność tablicy. Pracuje na tablicy i ją zmienia.
+            Zwracana
+            jest nowa tablica.
+         </p>
+      </div>
+
+      <div class="lineup" id="if">
+         <h1>Instrukcja warunkowa IF</h1>
+         <p>
+            if (zmienna) {}<br>
+            <span> if (zmienna) {} else {}; // </span>- jeżeli zmienna = 0 to false i pomija a 1 true i wchodzi, jeżeli
+            nie ma tekstu w stringu to nie wchodzi w pętle<br>
+            <span>alert("POP up"); </span>// okienko z komunikatem wyskakuje
+         </p>
+      </div>
+
+
+      <div class="lineup" id="switch">
+         <h1>Instrukcja warunkowa SWITCH</h1>
+         <p>
+            <span>const dayOfTheWeek </span>= "środa";<br><br>
+            <span>switch (dayOfTheWeek) {</span><br>
+            <span>case </span>"poniedziałek":<br>
+            <span>console.log</span>("dzisiaj poneidziałek");<br>
+            <span>break;</span><br><br>
+
+            <span>case </span>"wtorek":<br>
+            <span>console.log</span>("dzisiaj wtorek");<br>
+            <span>break;</span><br><br>
+
+            <span>case </span>"środa":<br>
+            <span>console.log</span>("dzisiaj środa");<br>
+            <span>break;</span><br><br>
+
+            <span>default:</span><br>
+            <span>console.log</span>("co to za dzień?");<br>
+            <span>break;<br>
+               }</span><br>
+         </p>
+      </div>
+
+      <div class="lineup" id="operatorWarunkowy">
+         <h1>Operator warunkowy</h1>
+         <p>
+            <span>let zmienna = 3 > 2 ? "tak" : "nie"; </span>//- czy 3 jest większy od 2? Jeżeli tak wykonaj "tak" a
+            jezeli nie to "nie"
+         </p>
+      </div>
+
+      <div class="lineup" id="operatorWarunkowySuperString">
+         <h1>Operator warunkowy SUPER String</h1>
+         <p>
+            <span> const playerName </span>= "Mściwość";<br>
+            <span>console.log</span>(`Witaj <span>${playerName ? playerName : "nieznajomy wojowniku"}</span>`); //${} -
+            wstrzykiwanie js w tekst. Jeżeli coś jest w playerName zwraca true i wykonuje 1 warunek czyli zwraca nazwe
+            ludzika, a jeżeli false to zwraca "nieznajomy wojowniku"<br>
+            <span>const name </span>= ["Marcin", "Dominik"];<br>
+            <span>const ty </span>= name[0];<br>
+            <span>const przyjaciel</span> = name[1];<br>
+            <span>console.log</span>(`Witaj <span>${ty ? ty : "bezimienny"} ${przyjaciel ? `twój przyjaciel to:
+               ${przyjaciel}` : "nie masz
+               przyjaciela"}</span>`);
+         </p>
+      </div>
+
+      <div class="lineup" id="petle">
+         <h1>PĘTLE</h1>
+         <p>
+            <span>for (let i = 0; i < 10; i++) </span>{ <br>
+                  console.log("wyświetlenie " + i);<br>
+                  }<br><br>
+
+                  <span>while (number < 0)</span> {<br>
+                        console.log("wyświetlenie ");<br>
+                        }<br><br>
+
+                        <span>do</span> {<br>
+                        console.log("wyświetlenie ");<br>
+                        } <span>while (number < 0);</span> // zrób to raz, a jeżeli warunek jest spełniony to rób to
+                              ciągle<br><br>
+
+                              <span>const colors</span> = ["red", "blue", "pink"];<br>
+                              <span>for (const color of colors)</span> { //iteracja czyli wyciąga z tablicy każdy index
+                              i
+                              go wyświetla
+                              console.log(color);
+                              }<br>
+
+
+                              <span> for(const name of names){</span> - odwołanie się do każdego elementu z tablicy
+                              names
+
+                              <span>}</span>
+         </p>
+      </div>
+
+      <div class="lineup" id="funkcje">
+         <h1>FUNKCJE</h1>
+         <p>
+            <span>Number.isInteger(zmienna); </span>// - czy nasza liczba jest całkowita<br>
+            <span>Number.isFinite(zmienna);</span> // - czy nasza liczba jest skończona<br>
+            <span>Number.parseInt('20', 10); </span>// zamiana stringa na liczbowy i w jakim systemie (16, 10, 4, 2)<br>
+            <span>Number.parseFloat('2.22');</span> // - konwertuje na liczbę po przecinku<br>
+            <span>Number.Math.round(200.55);</span> // - zaokrągla nam liczbę<br>
+            <span>Number.Math.floor(100.99); </span>// - wyrzuca nam liczbę po przecinku<br>
+            <span>Number.Math.random(); // </span>- generuje nam liczbę w zakresie od 0 do 0,99...
+         </p>
+
+      </div>
+      <div class="lineup">
+         <h1>1 - najlepiej to używać, ponieważ nie możemy jej nadpisać, plus nie możemy jej wywołać przed jej
+            zrobieniem</h1>
+         <p>
+            <span>const showMessage = function (message)</span> {<br>
+            console.log(message);<br>
+            }<br>
+            <span>showMessage</span>("napisz coś");
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>2 Wykonywana jest na samej górze. Może być rerurn albo consol.log</h1>
+         <p>
+            <span>function addNumbers</span>(number1, number2) {<br>
+            <span>let sum </span>= number1 + number2;<br>
+            <span>console.log</span>(sum);<br>
+            <span>return </span>sum;<br>
+            }
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>3 Funkjca strzałkowa - zamiast function to jest strzałka - NAJLEPIEJ JĄ UŻYWAĆ. Jak chcemy wywołać napis
+            to
+            muszą być "" gdy piszemy tekst nazwaFunkcji("xD");. Gdy przypiszemy jakąś zmienną do naszej funkcji to się
+            robi link referencyjny a nie nowa funkcja. Gdy piszemy return to zwraca nam daną wartość i możemy ją
+            przypisać
+            do nowo utworzonej zmiennej. nazwaFunkcji.length zwraca ile w funkcji mamy parametrów.</h1>
+         <p>
+            <span>const nazwaFunkcji = (number = 5) => {</span> // number = 5 czyli jest to wartość domyślna<br>
+            <span>console.log</span>(number);<br>
+            <span>return</span> number; // - zwraca daną wartość
+            };
+            }
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>4 Konstruktore najlepiej nie użwyać tej funkcji bo mało czytelna i ma minusy.</h1>
+         <p>
+            <span>const addNumbers = new Function("text", "alert(text);");</span>
+
+         </p>
+      </div>
+
+      <div class="lineup" id="callback">
+         <h1>CALLBACK - FUNKCJA Wywołania zwrotnego, którą przekazujemy w innej funkcji. Czyli wywołanie danej funkcji
+            w
+            innej funkcji</h1>
+         <p>
+            <span>const count = (x, otherFunction) =></span> {<br>
+            <span>return otherFunction(x);</span><br>
+            }<br><br>
+
+            <span>const addOne = (item) => {</span><br>
+            item++;<br>
+            <span>console.log</span>(item);<br>
+            <span>return</span> item;<br>
+            }<br><br>
+
+            <span>const subtractOne = (number) => {</span><br>
+            number--;<br>
+            <span>console.log</span>(number);<br>
+            <span>return</span> number;<br>
+            }<br><br>
+
+            <span>const result = count(5, addOne);</span> //Stosuje się do wywołania innej funkcji w danej funkcji aby
+            obliczyć daną wartość
+
+         </p>
+      </div>
+
+      <div class="lineup" id="arguments">
+         <h1>ARGUMENTS - zbiór elementów przypominających tablice. Np funkcja do liczenia każdego elementu podanego w
+            argumęcie</h1>
+         <p>
+            <span>const showArguments = function () {</span><br>
+            <span>console.log(arguments);</span> // - arguments - nazwa dla obiektyu (nazwa przypisania)<br>
+            <span>console.log(arguments.length);</span> // długość - ile argumentów przekazaliśmy<br>
+            <span>console.log(arguments[0]);</span> // odwoływanie się do danego argumentu<br>
+            <span>console.log(Array.isArray(arguments)); </span>// zwraca typ<br>
+            }<br><br>
+
+            <span>showArguments("1", null, {});</span>
+
+         </p>
+      </div>
+
+      <div class="lineup" id="rest">
+         <h1>REST - alternatywa dla ARGUMENTS lepsze niż arguments ponieważ jest jak tablica a nie jak obiekt w
+            przypadku
+            arguments. Możemy tutaj wykonać metody dla tablicy. Najlepiej używać do operacji na indexach forEach-a.</h1>
+         <p>
+            <span>function showAllArguments(...items) {</span> // - tworzy z innych wartości tablice<br>
+            <span>console.log(items);</span><br>
+            <span>console.log(items.length);</span><br>
+            <span>return items;</span><br>
+            }<br><br>
+
+            <span>showAllArguments("1", 2, 13, "ab", true, "Adam");</span>
+
+
+         </p>
+      </div>
+
+
+      <div class="lineup" id="foreach">
+         <h1>FOREACH - DO TABLIC wykonaj na każdym elemencie tablicy daną operacje czyli dzieli tablice na indexy i
+            robi
+            na nich dane operacje.</h1>
+         <p>
+            <span>const usersAges </span>= [20, 30, 40, 50, 60, 70, 80];<br><br>
+
+            <span>usersAges.forEach((userAge, index) => console.log</span>(`wiek użytkownika to <span>${userAge}
+               ${index} - index który element jest modyfikowany</span>`));<br><br>
+
+            <span>usersAges.forEach(function (userAge) {</span> // to samo co wyżej tylko inna funkcja
+            console.log(`wiek użytkownika to ${userAge}`);
+            });
+
+
+         </p>
+      </div>
+
+      <div class="lineup" id="obiekty">
+         <h1>OBIEKTY - inaczej KLASY</h1>
+
+      </div>
+
+      <div class="lineup">
+         <h1>1 - tworzenie obiektu</h1>
+         <p>
+            <span>const zmienna = {</span><br>
+            <span>name: </span>['Fafik', 'Azor'],<br>
+            <span>age:</span> 9,<br>
+            <span>'eye color':</span> 'brown', //odwołanie się: zmienna.['eye color'];<br>
+            <span>nazwaFunkcji() {<br>
+               console.log</span>("coś");<br>
+            }
+            }
+
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>2 - zmienianie wartości możemy robić dynamicznie poza obiektem</h1>
+         <p>
+            <span>zmienna.age</span> = 12;
+
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>USUWANIE</h1>
+         <p>
+            <span>delete zmienna.age;</span>
+
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>Odowłanie się obiektu w innej funkcji i zmienia dane dynamicznie czyli w 2 obiektach</h1>
+         <p>
+            <span>const result</span> = {<br>
+            <span>value: 1,</span><br>
+            }<br><br>
+
+            <span>function plus()</span> {<br>
+            <span>result.value++;</span><br>
+            }
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>Odwoływanie się do funkcji w obiekcie</h1>
+         <p>
+            <span>const zmienna></span> = {<br>
+            <span>score:</span> 0,<br>
+
+            <span>nazwaFunkcji()</span> {<br>
+            <span>this.score++;</span><br>
+            <span>console.log(thix.score);</span><br>
+            }<br>
+
+            <span>zmienna.nazwaFunkcji();</span><br>
+            }
+         </p>
+      </div>
+
+      <div class="lineup" id="dom">
+         <h1>DOM - Document Object Mode</h1>
+
+      </div>
+
+      <div class="lineup">
+         <h1>1 - Pobieranie elementów ze strony internetowej</h1>
+         <p>
+            <span>document.documentElement; //</span> - odowływanie się do obiektu HTML inaczej do znacznika html<br>
+            <span>document.body;</span> // - odowływanie się tylko do body<br>
+            <span>document.body.documentElement;</span><br>
+            <span>document.images;</span> // - dostanie się do wszystkich obrazków na stronie<br><br>
+
+            //Można zrobić z tego tablicę<br>
+            <span>const img = Array.from(document.images);<br>
+               const img2 = [...document.images];</span><br><br>
+
+            // Metody pobierające 1 element. Trzeba przypisywać zmienną aby móc się odowłać do niej.<br>
+            <span>const firstElement = document.querySelector("li:nth-child(2)");</span> //jak w CSS bierze tylko 1
+            element który pasuje. Lub null kiedy go nie znajdzie. Jeżęli chcemy podać id to musimy napisać #car.<br>
+            <span>const firstElement = document.getElementById('first');</span> // wskazujemy id elementu. Znajduje 1
+            element który ma takie id. Lub null kiedy go nie znajdzie.<br><br>
+
+            //Metoda pobierająca wszystkie pasujące elementy. Zwracany jest obiekt czyli w tym przypadku listę węzłów.
+            Jeżeli nie ma takiego to zwraca Null.<br>
+            <span>document.querySelectorAll("ul>li");</span> // Najlepiej stosować. Zwraca HTML Collection (tablico
+            podobny obiekt). Można tylko tutaj stosować forEach a gdzieś indziej tylko pętli for.<br>
+            <span>[...document.getElementsByTagName("li")];</span> // - sposób aby działał forEach wszędzie tak samo
+            jak w
+            querySelectorAll. Robi tablice z elementów.<br>
+            <span>document.getElementsByTagName('li');</span> // Zwraca HTML Collection (tablico podobny obiekt)<br>
+            <span>document.getElementsByClassName("even");</span> // Zwraca HTML Collection (tablico podobny
+            obiekt)<br><br>
+
+            //Pobieranie atrybutów z elementów<br>
+            <span>const h2 = document.querySelector('h2');</span><br>
+            <span>console.log(h2.getAttribute('class'));</span> // wyszukuje atrybut np class id itp a jeżeli go nie ma
+            to
+            wyświetla null.<br>
+            <span>document.querySelector('h2').getAttribute('class'); </span>// odwołanie się bezpośrednio do atrybuty
+            class<br><br>
+
+            // Odwoływanie się do zawartości elementów<br>
+            <span>const h2Class = document.querySelector('h2');</span><br>
+            <span>const h2Text = h2.textContent; </span>// - wyświetli nam tekst w h2 jaki napisaliśmy w HTML-u<br>
+            <span>const h2HTML = h2.innerHTML;</span> // - pobiera tagi zagnieżdzone typu strong b itp i do tego cały
+            tekst.<br><br>
+
+            //Sprawdzanie czy dany element ma daną klase<br>
+            <span>const h2Class = document.querySelector('h2');</span><br>
+            <span>console.log(h2.classList);</span> // sprawdza ilość klas w danym elemencie<br><br>
+
+            //Metody:<br>
+            <span>h2.classList.contains("title");</span> // - sprawdza czy dany element zawiera podaną klase i zwraca
+            true
+            lub false<br><br>
+
+            // Tworzenie tablicy z pobranych elementów aby wykonywać operacje.<br>
+            <span>const firstElement = document.querySelectorAll('li');</span><br>
+            <span>const firstArray = [...firstElement];</span> // tworzy tablice z wszystkich pobranych elementów. W
+            tablicy możemy zrobić więcej modyfikacji i wywołąć więcej metod niż w normalnym querySelector.<br>
+            <span>const firstArray = Array.from(firstElement);</span> // - 2 sposób przypisania tablicy do pobranych
+            elementów<br>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>2 - Modyfikacja elementów</h1>
+         <p>
+            <span>zmienna.textContent = 'Nowa zawartosc tekstowa'; </span>// - nadpisuje zawartość tekstową
+            elementu.<br>
+            <span>zmienna.innerHTML = `strong Pogrubienie /strong i normalnie`;</span> // - nadpisuje zawartość
+            tekstową
+            wraz pogrubieniem itp.<br>
+            <span>zmienna.style.fontSize = "20px";</span> // - nadpisuje właściwości klasy. Notacja wielbłądzia nazw
+            klas.
+            Dodaje klasy w HTML. Nadpisują klasy podane w stylach.<br>
+            <span>zmienna.classList.contains("klasa");</span> // - sprawdza czy dany element zawiera daną klase.<br>
+            <span>zmienna.classList.add("klasa"); </span>// - dodaje klase<br>
+            <span>zmienna.classList.toggle("klasa");</span> // - zastępuje klase / usuwa klase jeżeli jest<br>
+            <span>zmienna.classList.remove("klasa");</span> // - usuwa klase jeżeli jest<br>
+            <span>zmienna.className = "one two";</span> // - nadpisuje zawartość i dopisuje klase<br>
+            <span>zmienna.id = "nazwaId";</span> // - nadpisuje id<br>
+            <span>zmienna.setAttribute('title', 'Uwaga ważne');</span> // - nadpisuje nam zawartość html typu title src
+            itp. Muszą być 2 atrybuty 1 nazawa a 2 to zawartość.
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>3 - Nasłuchiwanie i obsługa zdarzeń</h1>
+         <p>
+            <span>window.addEventListener("click", function () {<br>
+               console.log("click");<br>
+               });</span>
+            /* - window to na cały dokument akcja. <br>
+            Zdarzenia:<br>
+            click<br>
+            dblclick<br>
+            scroll<br>
+            mousemove<br>
+            */<br><br>
+            <span>document.body.addEventListener("click", () => {<br>
+               console.log("kliknięcie");<br>
+               });</span> // - kliknięcie w body. Funkcja strzałkowa.<br><br>
+
+            <span>window.addEventListener("click", functionName);</span> // - przypisywanie funkcji do eventu.<br><br>
+
+            <span>document.querySelector('h1').addEventListener('click', function () {
+               this.textContent += "+"; </span>// dodaje + za każdym kliknięciem w h1<br>
+            <span>});</span> //aby się odwołać to musi być this. Dodaje zdarzenie na dany element HTML.<br><br>
+
+            <span>zmienna.addEventListener('click', function () {<br>
+               this.textContent += "+";</span> // dodaje + za każdym kliknięciem w h1<br>
+            <span>});</span> //aby się odwołać to musi być this. Dodaje zdarzenie na dany element HTML.<br><br>
+
+            <span>const zmienna = document.createElement('li');</span> // Tworzy nam element li na stronie<br>
+            <span>document.querySelector('ul').appendChild(zmienna);</span> // - dodawanie elementu na końcu ul. Jak
+            chcemyy się odwołać do body to zamiast ul piszemy body.
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>4 - Tworzenie i dodawanie elementów na stronie document - cała nasza strona, jest w window - całe okno
+            przeglądarki.</h1>
+         <p>
+            <span>console.log(window);</span><br>
+            <span>console.log(document);</span><br>
+            <span>window.console.log</span>("w konsoli");<br>
+            <span>document.title;</span> //sprawdza tytuł<br>
+            <span>document.domain;</span> // sprawdza domene<br>
+            <span>document.body;</span> // sprawdza ciało strony<br>
+            <span>window.innerHeight; </span>// wysokość okna<br>
+            <span>window.scrollY;</span> // wartość skrola<br>
+            <span>window.alert("popup wyskakuje");</span> // powinno się pisać samo alert bez window.<br>
+            <span>setTimeout(function () {}, 5000);</span> // zdarzenie po czasie wykonuje się raz<br>
+            <span>setInterval(nazwaFunkcji, 1000);</span> //wykonuje się w nieskończoność po danym upływie czasu<br><br>
+
+            <span>const showTime = function () {</span><br>
+            <span>time += 5;</span><br>
+            <span>console.log(`juz ${time} sekund tu jestes`);<br>
+               setTimeout(showTime, 5000);</span> // wywołanie kolejny raz funkcji, poniewaz by się wykonała tylko raz
+            a
+            tak się ciągle będzi wywoływać.<br>
+            }<br>
+            <span>let time = 0;</span><br>
+            <span>setTimeout(showTime, 5000);</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>LOSOWANIE RANDOM</h1>
+         <p>
+            <span>Math.random()</span> - liczby od 0 do 0,99
+            <span>Math.floor()</span> - zaokrągla liczby do liczb całkowitych. Jezeli są na + to z niedodatkiem a jak na
+            - to z
+            nadtatkiem
+            <span> Math.floor(Math.random());</span>
+
+            Losowanie od 4 do 6
+            <span> Math.random() * (max - min) + min;</span>
+         </p>
+      </div>
+
+
+      <div class="lineup">
+         <h1>ODŚWIEŻENIE STRONY</h1>
+         <p>
+            <span> e.preventDefault(); </span>- Zatrzymuje domyślne odświeżanie strony po wywołaniu eventu
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>Alert</h1>
+         <p>
+            <span> alert('co mam napisac'); </span>//Wywołuje okienkoz z alertem
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>Odwoływanie się do elementu poprzez this / event</h1>
+         <p>
+            <span> function nowaFunkcja(){</span>
+            <span> console.log(this);</span> // wyświetla nam zaznaczony element jak go stworzyliśmy poprzez
+            addEventListener
+            <span> };</span><br>
+
+            <span> const nowaFunkcja = (e) =>{</span><br>
+            <span> console.log(e.target);</span><br>
+            <span> console.log(e.currentTarget);</span> // albo taki zapis<br>
+            <span> };</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>Przechwytywanie danych przez data optins itp</h1>
+         <p>
+            <span> HTML: data-option="papier"</span><br><br>
+            <span> JS:</span><br>
+            <span> function handSelection(){</span><br>
+            <span> console.log(this.dataset.option); </span>// wyświetla nam napis papier ktory podalismy w HTML-u<br>
+            <span> game.playerHand = this.dataset;</span><br>
+            };
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>setInterval
+            - po wywołaniu zwraca swój index ile razy się wywołała</h1>
+         <p>
+            // Zatrzymanie set intervala:
+            <span> let number = 0;</span><br>
+            <span> function addLetter(){</span><br>
+            <span> console.log('xd');</span><br>
+            <span> number++;</span><br>
+            <span> if(number === 200){</span><br>
+            <span> clearInterval(indexTyping)</span><br>
+            <span> }</span>
+            <span>};</span><br>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>setInterval
+            - po wywołaniu zwraca swój index ile razy się wywołała, ABY WYWOŁAĆ 2 RAZ SET INTERVAL PO ZATRZYMANIU TRZEBA
+            PRZPISAĆ GO DO TEJ SAMEJ ZMIENNEJ ABY SIĘ NIE WYKONAŁ NOWY INTERVAL</h1>
+         <p>
+            // Zatrzymanie set intervala:
+            <span> let number = 0;</span><br>
+            <span> function addLetter(){</span><br>
+            <span> console.log('xd');</span><br>
+            <span> number++;</span><br>
+            <span> if(number === 200){</span><br>
+            <span> clearInterval(indexTyping)</span><br>
+            <span> }</span>
+            <span>};</span><br>
+         </p>
+      </div>
+      <div class="lineup">
+         <h1>ODWOŁANIE SIĘ DO SRC w celu podmiany obrazka:</h1>
+         <p>
+            <span> zmienna.src = "";</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>SPRAWDZANIE NA TABLICY GDZIE WYSTĘPUJE KLASA .ACTIVE. TYLKO TABLICA</h1>
+         <p>
+            <span>dots.findIndex(dot => dot.classList.contains('active')) </span>// findIndex() - Zwraca index w którym
+            wystąpiła dana klasa. A contains zwraca true/false
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>CLOSURES - SCHOWANIE ZMIENNYCH PRZED MOŻLIWOŚCIĄ ZMIANY ICH PZED INNYCH UŻYTKOWNIKÓW. Umożliwia dostęp do
+            funkcji, nawet gdy ona jest zamknięta. Istnieje zmienna gdy prowadzi do niej inna referencja do innej
+            funkcji (funkcja w funkcji)</h1>
+         <p>
+            <span> const allTime = () =>{</span><br>
+            <span>let count = 0;</span><br>
+            <span>span.textContent = 0;</span><br><br>
+
+            <span> function time(){</span><br>
+            <span> count++;</span><br>
+            <span> span.textContent = count;</span><br>
+            <span> };</span><br>
+
+            <span>return time;</span><br>
+            <span>};</span><br><br>
+
+            <span> const takeTime = allTime();</span><br>
+            <span>setInterval(takeTime, 1000);</span><br>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>POBIERANIE DATY:</h1>
+         <p>
+            <span>new Date().getHours();</span> // pobiera nam aktualną godzine<br><br>
+
+            <span>const time = new Date();</span><br>
+            <span> time.toLocaleString();</span> // przypisuje date + godzine<br>
+            <span> time.toLocaleDateString() </span>// przypisuje date<br>
+            <span>const seconds = time.getSeconds();</span><br>
+            <span>const minutes = time.getMinutes();</span><br>
+            <span>const hours = time.getHours();</span><br>
+            <span> time.getTime();</span> // czas w ms od 1stycznia 1970<br>
+            <span>const endTime = new Date('2019-01-25 22:34:00').getTime();</span> // Przypisuje nam wartości do
+            konkretnej daty. Jeżeli napiszemy .getTime() to nam obliczy czas w ms od 1 stcznia 1970 do zadeklarowanej
+            daty
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>USUWANIE ELEMENTU</h1>
+         <p>
+            <span>e.target.remove(); </span>// usunięcie elementu<br>
+            <span>e.target.parentNode.remove(); </span>// usunięcie rodzica danego elementu<br>
+            <span> e.target.parentNode.style.textDecoration = 'line-through';</span> // dodaje styl do rodzica. W tym
+            przypadku
+            przekreślenie<br>
+            <span> const index = e.target.dataset.key; </span>// Przypisanie wartości z data-key do zmiennej
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>ZNAJDYWANIE ELEMENTU ZA POMOCĄ ATRYBUTU:</h1>
+         <p>
+            <span> document.querySelector(`li[data-key="${index}"]`).remove();</span> // znajduje nam element o danym
+            data-key który jest w buttonie który zawiera się w li. Na końcu usuwa ten element .remove();
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>MAP - operacje na każdym elemencie tablicy i zwraca nową tablice. FILTER I MAP TWORZY NOWA TABLICE A
+            FOREACH NIE</h1>
+         <p>
+            <span> const double = arr.map(number => number * 2);</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>FILTER - FILTRUJE NAM ELEMENTY I ELEMENTY SĄ ZWRACANE W NOWEJ TABLICY</h1>
+         <p>
+            <span> tasks = tasks.filter((task) => {</span> //tak samo jak w foreachu możemy robić operacje na kazdym
+            elemencie i filter nam filtruje i zwraca tablice nową przefiltrowaną<br>
+            <span>return task.textContent.toLowerCase().includes(searchText) </span> // wyświetla tylko elementy kiedy
+            jest true<br>
+            <span>});</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>PROGRAMOWANIE OBIEKTOWE</h1>
+         <p>
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1></h1>
+         <p>
+            //PRZYPISYWANIE WARTOSCI<br>
+            <span>const maluch = new Car('xd');</span><br><br>
+
+            //NADPISYWANIE WARTOSCI<br>
+            <span>xddd.maluch= 'xd2';</span><br><br>
+
+            //NOWA WARTOŚĆ<br>
+            <span>maluch.marka = 'polonez';</span><br><br>
+
+            //PRZYPISANIE FUNKCJI W PROTOTYPIE<br>
+            <span>Car.prototype.addChildren = function(name){<br>
+               this.children.push(name);<br>
+               }</span><br><br>
+
+            //CZY JEST INSTANCJA TRUE/FALSE<br>
+            <span> arr instanceof Array;</span><br><br>
+
+            //SPRAWDZA PTOYOTYP<br>
+            <span> Object.getPrototypeOf(arr);</span>
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>KLASY TAK SAMO DZIAŁAJĄ JAK KONSTRKTORY I PROTOTYPY - TWORZĄ NOWE OBIEKTY KTÓRE MAJĄ SWOJE WŁAŚCIWOŚCI</h1>
+         <p>
+            //Tworzenie klasy:<br>
+            <span>class Family {<br>
+               constructor(name) {<br>
+               this.name = name;<br>
+               }<br>
+               addMember(){ </span>//jest to prototyp<br>
+
+            <span> }<br>
+               }</span><br><br>
+
+            //Wywoływanie klasy:<br>
+            <span>const nowakowie = new Family('nowakowie');<br>
+               nowakowie.addMember()</span> // wywołanie prototypu<br><br>
+
+            //JEŻELI CHCEMY ABY PROTOTYP BYŁ W KAŻDYM NOWYM OBIEKCIE TO PISZEMY GO W CONSTRUKTORZE:<br>
+            <span>class Family {<br>
+               constructor(name) {<br>
+               this.name = name;<br>
+               this.addMember = function(){<br>
+
+               }<br>
+               }<br>
+               }</span><br><br>
+
+            <span>const nowakowie = new Family('nowakowie');<br>
+               nowakowie.addMember()</span> // wywołanie prototypu w instancji<br><br>
+
+
+            //PRZYKŁAD KLASY:<br>
+            <span>class Family {<br>
+               constructor(members, ...names) {<br>
+               this.members = members;<br>
+               this.names = names;<br>
+               }<br><br>
+
+               addMember(newMember) {<br>
+               this.names.push(newMember);<br>
+               this.members++;<br>
+               console.log(`nowy członek: ${newMember}`)<br>
+               }<br><br>
+
+               static makeFamily(...members) { //metoda statyczna tylko z poziomu klasy<br>
+               return members;<br>
+               }<br>
+               }<br>
+               const kowalscy = new Family(3, 'Jan', 'Ewa', 'Adam');<br>
+               kowalscy.addMember('Hubert');<br>
+               Family.makeFamily('Jan', 'Ewa'); </span>// wywołanie metody statycznej<br>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>DZIEDZICZENIE KLASY DO NOWEJ KLASY. pRZY DZIEDZICZENIU WYKONYWANA JEST METODA super() i ona odwoływuje się
+            do konstruktora dziedziczonekgo.</h1>
+         <p>
+            <span>class Animal{<br>
+               constructor(age, name){<br>
+               this.age = age;<br>
+               this.name = name;<br>
+               }<br>
+               breathe(){<br>
+               console.log('Zwierze oddycha');<br>
+               }<br>
+               }</span><br><br>
+
+            <span>const zwierze = new Animal(2, 'Igor');</span><br><br>
+
+            <span>class Mammal extends Animal{<br>
+               constructor(age, name, hairs){ </span>// Możemy sobie podstawić inną zmienną ale też ona będzie się
+            odowływać do age z klasy nadrzędnej<br>
+            <span>super(age, name);</span> // wywołujemy konstruktor klasy nadrzędnej
+            //dziedziczenie<br>
+            <span>this.hairs = hairs;</span> // dodatkowa właściwość<br>
+            <span> }</span><br>
+            <span>}</span><br><br>
+
+            <span>const ssak = new Mammal(5, 'Jaś', 'Blond');</span><br>
+            <span> ssak.breathe();</span> // w saku mamy dostęp do prototypu który dziedziczymy<br>
+
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>WIĄZANIE JAWNE CALL I APPLY - PRZEKAZYWANIE ARGUMENTÓW PRZY POMOCY THIS. CALL - USTAWIA THIS NA 1 ARGUMENT
+            I WYWOŁUJE FUNKCJE. Czyli piszzemy czym ma być this w tym przypadku ma być human. Za każdym wywołaniem</h1>
+         <p>
+            <span> const human = {<br>
+               pesel: 123456789;<br>
+               }<br><br>
+
+               const showPesel = function(name){<br>
+               console.log(`Twój pesel to: ${this.pesel}, imie: ${name}`);<br>
+               }<br><br>
+
+               showPesel.call(human, 'Zbyszek');
+            </span>
+
+         </p>
+      </div>
+
+
+      <div class="lineup">
+         <h1>WIĄZANIE TWARDE - NA STAŁE PRZYPISUJE NAM COŚ DO FUNKCJI i zwraca nową funkjcę - CZESTO STOSOWANE W REACT
+         </h1>
+         <p>
+            <span>const showPeselNumber = showPesel.bind(human);</span> - na stałe przypisuje this do funkcji human<br>
+            <span>showPeselNumber();</span> // wywołanie funkcji<br><br>
+
+            <span>const szarik = {<br>
+               children: ['fafik', 'zaba'],</span><br><br>
+
+            <span>showChildren: function () {<br>
+               const that = this;<br>
+               this.children.forEach(function (child, index) {<br>
+               console.log(that.children[index]);<br>
+               }.bind(this))</span> //przypisuje this do funkcji która go gubi<br>
+            <span>},<br>
+               }</span>
+         </p>
+      </div>
+
+
+      <div class="lineup">
+         <h1>GDY NAM NIE DZIAŁA THIS GDY MAMY FUNKCJE W FUNKCJI: to przypisujemy this do nowej zmiennej np that. Nie
+            tworzy this pętla for of,
+         </h1>
+         <p>
+            <span> const szarik = {<br>
+               children: ['fafik', 'zaba'],<br><br>
+
+               showChildren: function () {<br>
+               const that = this;<br>
+               this.children.forEach(function (child, index) { </span>//LUB ZASTOSOWAĆ FUNKCJĘ STRZAŁKOWĄ TO MOŻE BYĆ
+            THIS<br>
+            <span> console.log(that.children[index]);<br>
+               })<br>
+               }<br>
+               }<br>
+               szarik.showChildren();</span>
+         </p>
+      </div>
+
+      <div class="lineup">
+         <h1>METODA PRYWATNA I ODWOŁYWANIE SIĘ DO UKRYTEJ ZAWARTOŚCI
+         </h1>
+         <p>
+            <span>class Cat{<br>
+               constructor(color){<br>
+               this._color = color;<br>
+               }<br>
+               getColor(){<br>
+               return this._color;<br>
+               }<br>
+               }<br><br>
+
+               const kotek = new Cat("czarny");<br>
+               console.log(kotek.getColor());</span><br><br>
+
+
+            //PRZEZ CLOSURE<br>
+            <span>class Dog{<br>
+               constructor(dogName, color){<br>
+               let name = dogName;<br>
+               let _color = color;<br>
+               this.getName = () =>{<br>
+               return name;<br>
+               }<br>
+               this.getColor = () =>{<br>
+               return _color;<br>
+               };<br>
+               this.setColor = (value) =>{<br>
+               return _color = value;<br>
+               };
+               }
+               }<br>
+               const fafik = new Dog('fafik', 'czarny');</span>
+         </p>
+      </div>
+
+   </div>
+   <script src="js/jquery.min.js"></script>
+   <script src="js/scripts.js"></script>
+</body>
+
+</html>

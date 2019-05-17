@@ -1,0 +1,2741 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+		integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+
+
+	<title></title>
+
+</head>
+
+<body style="overflow:hidden; overflow-y: scroll;">
+
+	<nav style="
+position:fixed; 
+top:0px; 
+left:0px;
+background: #3c3c3c;
+height: 100%;
+width: 250px;
+z-index: 10;
+display:block;
+text-align: center;
+overflow:auto;
+">
+		<div style="
+margin-top: 8px;
+
+">
+
+			<a href="#Zdarzenia" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Zdarzenia</button></a>
+
+			<a href="#ZdarzenieonClick" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Zdarzenie onClick</button></a>
+			<a href="#KomponentFunkcyjny" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Komponent Funkcyjny</button></a>
+
+			<a href="#KomponentKlasowy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Komponent Klasowy</button></a>
+
+
+			<a href="#Zagnnieżdzanie" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Zagnnieżdzanie komponentów i wysw</button></a>
+
+			<a href="#Wyświetlaniewkonsoli" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Wyświetlanie w konsoli metod komponentu</button></a>
+
+			<a href="#Przekazywaniestate" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Przekazywanie state do komponentu</button></a>
+
+			<a href="#Dodawanienowejwartości" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Dodawanie nowej wartości do zmiennej w state</button></a>
+
+			<a href="#Bindowanie" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Bindowanie</button></a>
+
+			<a href="#Odwoływaniesiędostate" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Odwoływanie się do state w nowym obiekcie</button></a>
+
+
+			<a href="#Childrenkomponentu" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Children komponentu</button></a>
+
+			<a href="#Dodawaniepropsów" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Dodawanie propsów do komponentów</button></a>
+
+			<a href="#Wywoływanieeventu" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Wywoływanie eventu</button></a>
+
+			<a href="#Operatorlogiczny" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Operator logiczny</button></a>
+
+			<a href="#DEBUGGER" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">DEBUGGER</button></a>
+
+			<a href="#prevState" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">prevState</button></a>
+
+			<a href="#BindowanieFunkcji" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Bindowanie Funkcji w elementach</button></a>
+
+			<a href="#Odwoływaniesiędoprops" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Odwoływanie się do props w state oraz funkcjach</button></a>
+
+			<a href="#Domyślnawartośćprops" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Domyślna wartość props</button></a>
+
+			<a href="#Destrukturyzacja" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Destrukturyzacja</button></a>
+
+			<a href="#Wywoływaniekomponentów" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Wywoływanie komponentów przy pomocy funkcji</button></a>
+
+			<a href="#Styleliniowe" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Style liniowe</button></a>
+
+			<a href="#Mapowanietablicy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Mapowanie tablicy</button></a>
+
+			<a href="#Filtrowanietablicy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Filtrowanie tablicy</button></a>
+
+			<a href="#Switch" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Switch</button></a>
+
+			<a href="#Modyfikowanietablicy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Modyfikowanie tablicy w state</button></a>
+
+			<a href="#Formularzpodstawowy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Formularz - podstawowy</button></a>
+
+			<a href="#Kopiatablicy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Kopia tablicy przy pomocy REST</button></a>
+
+			<a href="#FormularzTeoria" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Formularz - Teoria</button></a>
+
+			<a href="#COMPONENT" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">COMPONENTDIDMOUNT / COMPONENTDIDUPDATE /
+					COMPONENTDIDUNMOUNT:</button></a>
+
+			<a href="#Odliczanieczasu" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Odliczanie czasu</button></a>
+
+			<a href="#Import/Export" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Import/Export modułów</button></a>
+
+			<a href="#JSON" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">JSON</button></a>
+
+			<a href="#FETCH" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">FETCH:</button></a>
+
+			<a href="#JSONp" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">JSON - przykład</button></a>
+
+			<a href="#XML" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">XML HTTPREQUEST</button></a>
+
+			<a href="#Sortowanieelementów" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Sortowanie elementów w tablicy</button></a>
+
+			<a href="#ReactRouting" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">React Routing</button></a>
+
+			<a href="#Rozdzielanieklaswtablicy" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Rozdzielanie klas w tablicy</button></a>
+
+			<a href="#BOOTSTRAP" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">BOOTSTRAP W REACT</button></a>
+
+			<a href="#SASS" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">SASS W REACT</button></a>
+
+			<a href="#GITHUB" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">GITHUB</button></a>
+
+			<a href="#naserwer" style="display:block "><button class="btn btn-outline-success" type="button"
+					style="margin-bottom: 10px; width: 90%;">Wersja na serwer</button></a>
+
+		</div>
+	</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- START -->
+	<h3 id="Zdarzenia" class="text-center font-weight-bold mb-5 bg-primary mt-5">Zdarzenia</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="7" class="text-left ">
+
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="22" class="text-left bg-info">
+onClick - po kliknięciu
+onChange - po zmianie w np inpucie
+onSubmit - gdy potwierdzimy coś np w inpucie
+onKeyDown - po przyciśnięciu klawisza
+onKeyUp - po puszczeniu klawisza
+onFocus - po kliknięciu w inputa np
+onBlur - gdy odklikamy np iputa
+onSelect - po zaznaczeniu
+onMauseMove - po poruszaniu myszką
+onScroll - po skrolowaniu
+onAnimationStart - po rozpoczęciu animacji
+onAnimationEnd - po zakończeniu animacji
+onTouchMove -
+e.preventDefault(); // brak odświeżania
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+	<!-- START -->
+	<h3 id="ZdarzenieonClick" class="text-center font-weight-bold mb-5 bg-primary mt-5">ZDARZENIE ONCLICK</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="7" class="text-left ">
+				<h1 onClick={() => {
+					alert("kliknal");
+				}} >
+	
+	
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+	<!-- START -->
+	<h3 id="KomponentFunkcyjny" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT FUNKCYJNY</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="10" class="text-left ">
+				const App = () => {
+					return (
+						<div>
+							<h1>Pierwszy komponent</h1>
+						</div>
+					)
+				}
+				
+				ReactDOM.render(<App />, document.getElementById('root'));
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="KomponentKlasowy" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT KLASOWY - DODATKOWE 2
+		CECHY
+		STATE. MUSI MIEĆ RENDER</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="15" class="text-left ">
+					class App extends React.Component {
+						state = {
+							number: 0,
+						}
+						render() {
+							return (
+								<section>
+									<h2>Komponent klasowy {this.state.number}</h2>
+								</section>
+							)
+						}
+					}
+					
+					ReactDOM.render(<App />, document.getElementById('root'));
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+					</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Zagnnieżdzanie" class="text-center font-weight-bold mb-5 bg-primary mt-5">ZAGNIEŻDZANIE KOMPONENTÓW I
+		WYŚWIETLANIE W
+		1 KOMPONENCIE</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="30" class="text-left ">
+			const Header = () => {
+				return (
+					<h2>Witaj!</h2>
+				)
+			}
+			
+			class Blog extends React.Component {
+				state = {
+					number: 0,
+				}
+				render() {
+					return (
+						<section>
+							<h2>Komponent klasowy {this.state.number}</h2>
+						</section>
+					)
+				}
+			}
+			
+			const App = () => {
+				return (
+					<>
+						<Header />
+						<Blog />
+					</>
+				)
+			}
+			
+			ReactDOM.render(<App />, document.getElementById('root'));
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Wyświetlaniewkonsoli" class="text-center font-weight-bold mb-5 bg-primary mt-5">WYŚWIETLANIE METOD DANEGO
+		KOMPONENTU</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="1" class="text-left ">
+
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+				1. Zaznacz komponent w zakładce REACT
+				2. Przejdz do konsoli
+				3. Wpisz: $r
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Przekazywaniestate" class="text-center font-weight-bold mb-5 bg-primary mt-5">PRZEKAZYWANIE STATE DO
+		KOMPONENTÓW POZA
+		FUNKCJĄ PRZY POMOCY KOMPONENTU FUNKCYJNEGO:</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="31" class="text-left ">
+				class ShoppingList extends React.Component {
+					state = {
+						items1: 'ogórki',
+						items2: 'sok',
+						items3: 'picie'
+					}
+					render() {
+				
+						return (
+							<>
+								<h1>Lista zakupów</h1>
+								<ItemList name={this.state.items1} />
+								<ItemList name={this.state.items2} />
+								<ItemList name={this.state.items3} />
+							</>
+						)
+					}
+				}
+				
+				
+				const ItemList = (props) => { //dowolna nazwa do wywołania elementu (zazwyczaj stosowana to props)
+					return (
+						<li>{props.name}</li>
+					)
+				}
+				
+				ReactDOM.render(<ShoppingList />, document.getElementById('root'));
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+
+
+	<!-- START -->
+	<h3 id="Dodawanienowejwartości" class="text-center font-weight-bold mb-5 bg-primary mt-5">DODAWANIE NOWEJ WARTOŚCI DO
+		ZMIENNEJ W
+		STATE - NAJLEPSZY SPOSÓB:</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="25" class="text-left ">
+				class App extends React.Component {
+					state = {
+						text: '',
+					}
+				
+					handleClick = () => {
+						const letter = 'a';
+						this.setState({
+							text: this.state.text + letter,
+						});
+					}
+				
+					render() {
+						return (
+							<div className='container'>
+								<button onClick={this.handleClick}>Dodaj a</button>
+								<h1>{this.state.text}</h1>
+							</div>
+						)
+					}
+				}
+				
+				ReactDOM.render(<App />, document.getElementById('root'));
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+				</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+
+	<!-- START -->
+	<h3 id="Bindowanie" class="text-center font-weight-bold mb-5 bg-primary mt-5">1 SPOSÓB NA ZBINDOWANIE THIS W NORMALNEJ
+		FUNKCJI:</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="25" class="text-left ">
+					class App extends React.Component {
+						state = {
+							text: '',
+						}
+					
+						handleClick() {
+							const letter = 'a';
+							this.setState({
+								text: this.state.text + letter,
+							});
+						}
+					
+						render() {
+							return (
+								<div className='container'>
+									<button onClick={this.handleClick.bind(this)}>Dodaj a</button>
+									<h1>{this.state.text}</h1>
+								</div>
+							)
+						}
+					}
+					
+					ReactDOM.render(<App />, document.getElementById('root'));
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+					</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="" class="text-center font-weight-bold mb-5 bg-primary mt-5">STARSZY SPOSÓB ZAPISU STATE ORAZ BINDOWANIE
+		W INNY SPOSÓB W FUNKJCI NORMALNEJ:</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="29" class="text-left ">
+					class App extends React.Component {
+						constructor(props) {
+							super(props); //zawsze stosuj props i super musi być
+							this.state = {
+								text: '',
+							}
+							this.handleClick = this.handleClick.bind(this);
+						}
+					
+						handleClick() {
+							const letter = 'a';
+							this.setState({
+								text: this.state.text + letter,
+							});
+						}
+					
+						render() {
+							return (
+								<div className='container'>
+									<button onClick={this.handleClick}>Dodaj a</button>
+									<h1>{this.state.text}</h1>
+								</div>
+							)
+						}
+					}
+					
+					ReactDOM.render(<App />, document.getElementById('root'));
+						</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+						</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Odwoływaniesiędostate" class="text-center font-weight-bold mb-5 bg-primary mt-5">ODWOŁYWANIE SIĘ DO STATE W
+		NOWYM OBIEKCIE
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="22" class="text-left ">
+				class App extends React.Component {
+					state = {
+						text: '',
+					}
+				
+					handleClick = () => {
+						const letter = 'a';
+						this.setState({
+							text: this.state.text + letter,
+						});
+					}
+				
+					render() {
+						return (
+							<div className='container'>
+								<button onClick={this.handleClick}>Dodaj a</button>
+								<PanelResult name={this.state.text} />
+							</div>
+						)
+					}
+				}
+						</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+						</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Childrenkomponentu" class="text-center font-weight-bold mb-5 bg-primary mt-5">CHILDREN PRZY DEKLAROWANIU
+		KOMPONENTU:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="32" class="text-left ">
+				class App extends React.Component {
+					state = {
+						text: '',
+					}
+				
+					handleClick = () => {
+						const letter = 'a';
+						this.setState({
+							text: this.state.text + letter,
+						});
+					}
+				
+					render() {
+						return (
+							<div className='container'>
+								<button onClick={this.handleClick}>Dodaj a</button>
+								<PanelResult text={this.state.text}>Text children</PanelResult>
+							</div>
+						)
+					}
+				}
+				
+				const PanelResult = (props) => {
+					return (
+						<h1>{props.text}: {props.children}</h1>
+					)
+				};
+				
+				ReactDOM.render(<App />, document.getElementById('root'));
+						</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+						</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Dodawaniepropsów" class="text-center font-weight-bold mb-5 bg-primary mt-5">DODAWANIE PROPSÓW DO KLASY GŁÓWNEJ
+		PRZY
+		reactdom:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="32" class="text-left ">
+				class App extends React.Component {
+					state = {
+						text: '',
+					}
+				
+					handleClick = () => {
+						const number = Math.floor(Math.random() * 10);
+						this.setState({
+							text: this.state.text + number,
+						});
+					}
+				
+					render() {
+						return (
+							<div className='container'>
+								<button onClick={this.handleClick}>{this.props.btnTitle}</button>
+								<PanelResult text={this.state.text}>Text children</PanelResult>
+							</div>
+						)
+					}
+				}
+				
+				const PanelResult = (props) => {
+					return (
+						<h1>{props.text}: {props.children}</h1>
+					)
+				};
+				
+				ReactDOM.render(<App btnTitle="Dodaj cyfrę" />, document.getElementById('root'));
+						</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+						</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Wywoływanieeventu" class="text-center font-weight-bold mb-5 bg-primary mt-5">WYWOŁYWANIE EVENTU NA
+		WYŚWIETLENIE DANYCH:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="30" class="text-left ">
+					class App extends React.Component {
+						state = {
+							text: '',
+						}
+					
+						handleInputChange(e) {
+							console.log(e.target.value);
+						}
+					
+						render() {
+							return (
+								<div className='container'>
+									<input type="text" onChange={this.handleInputChange} />
+									<button>Reset</button>
+									<h1></h1>
+								</div>
+							)
+						}
+					}
+					
+					const PanelResult = (props) => {
+						return (
+							<h1>{props.text}: {props.children}</h1>
+						)
+					};
+					
+					ReactDOM.render(<App />, document.getElementById('root'));
+							</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+
+							</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Operatorlogiczny" class="text-center font-weight-bold mb-5 bg-primary mt-5">OPERATOR LOGICZNY: FALSE NIE JEST
+		WYŚWIETLANIE W REACT
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="30" class="text-left ">
+				class App extends React.Component {
+					state = {
+						messageIsActive: false,
+					}
+				
+					handleMessageButton = () => {
+						this.setState({
+							messageIsActive: !this.state.messageIsActive,
+						});
+					};
+				
+					render() {
+						// console.log(this.state.messageIsActive);
+						const text = 'Lorem ipsum dolor sit amet consectetur adipisicing elit.';
+						return (
+							<div className='container'>
+								<button onClick={this.handleMessageButton}>{this.state.messageIsActive ? 'Ukryj' : 'Pokaż'}</button>
+								<p>{this.state.messageIsActive && text}</p> 
+								
+					{this.state.messageIsActive ? <p>{text}</p> : null} // 2 sposób
+					{this.state.messageIsActive && <p>{text}</p>} // 3 sposób
+							</div>
+						)
+					}
+				}
+				
+				ReactDOM.render(<App />, document.getElementById('root'));
+							</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="4" class="text-left bg-info">
+{/* jeżeli wartość po lewej jest false to nic nie wyświetla i zwraca false a jeżeli true to wyświetla text po prawej */}
+							</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="DEBUGGER" class="text-center font-weight-bold mb-5 bg-primary mt-5">DEBUGGER WPISUJEMY debugger tam do którego
+		momentu chcemy wywołać funkcję w celu sprawdzenia poprawnmości kodu.
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="1" class="text-left ">
+
+								</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+								</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="prevState" class="text-center font-weight-bold mb-5 bg-primary mt-5">PREV STATE - SETSTATE ZAPISANE PRZY
+		POMOCY
+		FUNKCJI STOSOWAĆ GDY ODWOŁUJEMY SIĘ DO STANU STATE <br>I prevState (możemy dowolną zmienną napisać) zwraca aktualny
+		stan
+		danej zmiennej w tym momęcie.
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="5" class="text-left ">
+				this.setState((prevState) => ({
+					messageIsActive: !prevState.messageIsActive,
+				}));
+				
+								</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+								</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="BindowanieFunkcji" class="text-center font-weight-bold mb-5 bg-primary mt-5">PRZEKAZYWANIE ARGUMENTÓW DO
+		FUNKCJI PRZY
+		POMOCY .BIND I NIE TYLKO
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="20" class="text-left ">
+<button onClick={this.handleMathClick.bind(this, 'substraction', 10)}>-10</button>
+<button onClick={() => this.handleMathClick('substraction', 1)}>-1</button> // 2 sposób LEPSZY BO NIE MA BUGA
+<button onClick={e => this.handleMathClick('substraction', 1, e)}>-1</button> // przekazywanie eventu do argumentów
+<button onClick={this.handleMathClick.bind(this, 'substraction', 10)}>-10</button> // przekazywanie eventu 2 sposób. Tutaj nie przekazujemy eventu tylko w ostatnim argumencie w naszej nowej funkcji piszemy event i to jest traktowane jako event
+				
+				handleMathClick(type, number, event) {
+						if (type === 'substraction') {
+							this.setState(prevState => ({
+								count: prevState.count + 1,
+								result: prevState.result - number,
+							}))
+						}
+					}
+				
+								</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+								</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Odwoływaniesiędoprops" class="text-center font-weight-bold mb-5 bg-primary mt-5">ODWOŁYWANIE SIĘ DO PROPS W
+		STATE ORAZ W
+		FUNKCJACH
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="17" class="text-left ">
+				state = {
+					count: 0,
+					result: this.props.counter,
+				}
+			
+			handleMathClick(type = 'reset', number = 1) {
+						this.setState(prevState => ({
+							count: prevState.count + 1,
+							result: this.props.counter,
+						}));
+			}
+			
+			
+			const startValue = 10;
+			ReactDOM.render(<App counter={startValue} />, document.getElementById('root'));
+				
+								</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+								</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Domyślnawartośćprops" class="text-center font-weight-bold mb-5 bg-primary mt-5">DOMYŚLNA WARTOŚĆ PROPS W
+		KOMPONENCIE
+		KLASOWYM I FUNKCYJNYM
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="4" class="text-left ">
+					<p>{this.props.name || "break"}</p> // - komponent klasowy
+					<p>{props.name || "break"}</p> // - komponent funkcyjny
+									</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+									</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="display" class="text-center font-weight-bold mb-5 bg-primary mt-5">DOMYŚLNE PROPS DLA KLASY: musi być
+		defaultProps i jeżeli nie mamy podanych ich w props to przypisywane są te wartości
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="4" class="text-left ">
+					static defaultProps = { 
+						name: 'jestem!',
+					}
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="display" class="text-center font-weight-bold mb-5 bg-primary mt-5">PRZYPISYWANIE defaultProps poza klasą:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="4" class="text-left ">
+				App.defaultProps = {
+					name: 'jestem!',
+				}
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Destrukturyzacja" class="text-center font-weight-bold mb-5 bg-primary mt-5">DESTRUKTURYZACJA - WYODRĘBNIANIE
+		ELEMENTU
+		ABY NIE PISAĆ this.state. Piszemy po render i przed return. Moze być również to dla propsów.
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="6" class="text-left ">
+				const {zmiennaState} = this.state;
+				const {zmiennaState, zmiennaState2} = this.state; // można 2 zmienne też tak przypisać
+				<button onClick={zmiennaState}></button> //nie musimy pisać this.state.zmiennaState tylko zmienna state
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="display" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT POZA GŁÓWNA FUNKCJĄ ZAMIANA:
+		PONIEWAŻ NIE MOŻEMY SIĘ ODWOŁYWAĆ TYLKO MOŻEMY PRZYPISAĆ DO ARUMENTÓW
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="4" class="text-left ">
+				<HandleText age={this.state.age} button={this.state.button} />
+				{HandleText(this.state.age, this.state.button)}
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Wywoływaniekomponentów" class="text-center font-weight-bold mb-5 bg-primary mt-5">WYWOŁYWANIE KOMPONENTÓW PRZY
+		POMOCY
+		FUNKCJI:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="44" class="text-left ">
+				<HandleText age={this.state.age} button={this.state.button} />
+				const PositivMessage = () =>{
+					return(
+						<>
+							<p>Pozytywna wiadomość</p>
+						</>
+					)
+				}
+				
+				class App extends React.Component {
+					state = {
+						input: false,
+						button: false,
+					}
+				
+					displayMessage = () =>{
+						if(prawda){
+						return <PositivMessage/>
+						}	
+					};  
+				
+					render() {
+						const { input, button } = this.state;
+						return (
+							<>
+								<h1>Kup bilet na horror roku!</h1>
+								<CreateForm
+									handleSubmit={this.handleSubmit}
+									handleChange={this.handleChange}
+								/>
+								{this.displayMessage}
+							</>
+						)
+					}
+				}
+				
+				
+				
+				ReactDOM.render(
+					<App />,
+					document.getElementById('root')
+				);
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Styleliniowe" class="text-center font-weight-bold mb-5 bg-primary mt-5">STYLE LINIOWE W REAKCIE Z WARUNKIEM
+		WYŚWIETLANIA:<br>można zapisać cały warunek w nowej zmiennej i zmienną podstawić do środka
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="2" class="text-left ">
+				<span style={shoppingCart == 0 ? { opacity: 0.3, } : {}}> {shoppingCart} </span>
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Mapowanietablicy" class="text-center font-weight-bold mb-5 bg-primary mt-5">MAPOWANIE TABLICY:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="3" class="text-left ">
+				const users = this.props.data.users;
+				const Item = users.map(user => <Items key={user.id} user={user} />);
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Filtrowanietablicy" class="text-center font-weight-bold mb-5 bg-primary mt-5">FILTROWANIE TABLICY
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="5" class="text-left ">
+let users = this.props.data.users;
+users = users.filter(user => user.sex === 'female'); // ZWRACA NOWĄ PRZEFILTROWANĄ TABLICE
+const Item = users.map(user => <Items key={user.id} user={user} />);
+										</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+										</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Switch" class="text-center font-weight-bold mb-5 bg-primary mt-5">SWITCH W REACT
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="19" class="text-left ">
+					switch (this.state.select) {
+						case "all":
+							return users.map(user => <Items key={user.id} user={user} />);
+			
+						case "female":
+							users = users.filter(user => user.sex === 'female');
+							return users.map(user => <Items key={user.id} user={user} />);
+			
+						case "male":
+							users = users.filter(user => user.sex === 'male');
+							return users.map(user => <Items key={user.id} user={user} />);
+			
+						default:
+							return "Brak danych"
+					}
+											</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+											</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Modyfikowanietablicy" class="text-center font-weight-bold mb-5 bg-primary mt-5">MODYFIKOWANIE STATE W TABLICY
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="39" class="text-left ">
+				state = {
+					items: [
+						{ id: 1, name: 'schabowy', active: true },
+						{ id: 2, name: 'ziemniaki', active: false },
+						{ id: 3, name: 'kasza', active: false },
+						{ id: 4, name: 'zupa', active: false },
+						{ id: 5, name: 'kompot', active: false },
+						{ id: 6, name: 'chleb', active: true },
+					],
+				}
+			
+				handleChangeStatus = (id) => {
+					const items = this.state.items.map(item => { //przypisujemy do zmiennej tą samą tablice i ją mapujemy
+						if (id === item.id) { //warunek co ma się edytować
+							item.active = !item.active; //zmiana wartości
+						}
+						return item; //trzeba zwrócić zmienioną rzecz
+					})
+					this.setState(prevState => ({
+						items: items, //przypisujemy nową tablice do istniejącej tablicy w state aby działało prawidłowo
+					}));
+				}
+			
+				render() {
+					return (
+						<div className='container'>
+							<Header items={this.state.items} />
+							<ListItems items={this.state.items} click={this.handleChangeStatus} />
+						</div>
+					);
+				}
+			}
+											</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+											</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Formularzpodstawowy" class="text-center font-weight-bold mb-5 bg-primary mt-5">FORMULARZ W REACT PODSTAWOWY:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="39" class="text-left ">
+				class App extends React.Component {
+					state = {
+						city: '',
+						text: '',
+						isLoved: true,
+						number: '0',
+					}
+				
+				
+					handleChange = e => {
+						// console.log(e.target.name); //wyświetla nam name
+						// console.log(e.target.type); // sprawdza jaki typ jest
+						if (e.target.type === "checkbox") {
+							this.setState({
+								[e.target.name]: e.target.checked,
+							})
+						} else {
+							this.setState({
+								[e.target.name]: e.target.value,
+							})
+						}
+					}
+				
+					render() {
+						return (
+					
+								<label>
+									Podaj miasto
+									<input name="city" value={this.state.city} onChange={this.handleChange} type="text" />
+								</label><br />
+								<label>
+									Napisz coś o tym mieście
+									<textarea name="text" value={this.state.text} onChange={this.handleChange}></textarea>
+			</label1><br />
+			<label1>
+				Czy lubisz to miasto
+				<input name="isLoved" type="checkbox" checked={this.state.isLoved} onChange={this.handleChange} />
+			</label1><br />
+			<label1>
+				Ile razy byłeś:
+				<select1 name="number" value={this.state.number} onChange={this.handleChange}>
+					<option1 value="0">0</option>
+						<option1 value="1">1</option>
+							<option1 value="2">2</option>
+								<option1 value="3">więcej</option>
+				</select1>
+			</label1>
+
+			);
+			}
+			}
+			</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+											</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+
+	<!-- START -->
+	<h3 id="Kopiatablicy" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOPIA TABLICY POMNIEJSZONA O 1 ELEMENT
+		PRZY
+		POMOCY REST. Element rest musi być na końcy przy destrukturyzacji
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="9" class="text-left ">
+					const players = ['Jacek', 'Tomasz', 'Jarek', 'Arek'];
+					let[user1, ...users] = players;
+					//user1 -> 'Jacek'
+					//users(3) ->['Tomasz', 'Jarek', 'Arek']
+					[...players]; //tworzy nam kopie tablicy players
+				</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+												</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="FormularzTeoria" class="text-center font-weight-bold mb-5 bg-primary mt-5">FORMULARZE - TEORIA
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="14" class="text-left ">
+					<input
+					defaultValue="imię" //domyślna wartość pola value
+					ref="username" //można wykorzystać to przy onSubmit 
+				/>
+				
+				handleSubmit = e =>{
+					e.preventDefault(); //brak odświezania się formularza
+					const name = e.target.elements.username.value; // odwoływanie się do poszczególnego elementu przy pomocy nazwy
+					const name=this.refs.username.value; // odwoływanie się do poszczególnego elementu przy pomocy referencji
+				}
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="COMPONENT" class="text-center font-weight-bold mb-5 bg-primary mt-5">COMPONENTDIDMOUNT / COMPONENTDIDUPDATE /
+		COMPONENTDIDUNMOUNT:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="28" class="text-left ">
+componentDidMount(){} // wywoływany jest gdy aplikacja się zamontuje gdy jest tam setInterval to w componentDidUnmount trzeeba go wyłączyć. Najlepiej tutaj załadować pliki z jsona i przypisać je do state a dlatego bo gdy załadujemy bezpośrednio do state to przy renderze nie będziemy mieć w ogóle danych.
+
+componentDidUpdate(){} // wywoływana jest gdy aplikacja się zaktualizuje przy pomocy np setState
+
+componentDidUnmount(){} // wywoływany jest gdy komponent jest odmontowywany czyli gdy zniknie
+
+handleMultiplication = () => {
+    this.setState(prevState => ({
+      result: prevState.resultc * prevState.ratio,
+    }));
+  }
+
+componentDidUpdate = () => { 
+    if (this.state.result > 1000 && this.state.ratio === 2) {
+      this.setState(() => ({
+        ratio: 0.5,
+      }))
+    } else if (this.state.result < 1 && this.state.ratio === 0.5) {
+      this.setState(() => ({
+        ratio: 2,
+      }))
+    }
+  }
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+
+	<!-- START -->
+	<h3 id="Odliczanieczasu" class="text-center font-weight-bold mb-5 bg-primary mt-5">ODLICZANIE CZASU:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="45" class="text-left ">
+				class App extends React.Component {
+
+					interval = "";
+				
+					state = {
+						time: this.getTime(),
+					}
+				
+					getTime() {
+						const currentTime = new Date();
+						return ({
+							hours: currentTime.getHours(),
+							minutes: currentTime.getMinutes(),
+							seconds: currentTime.getSeconds(),
+						})
+					}
+				
+					setTime = () => {
+						const time = this.getTime();
+						this.setState({
+							time: time,
+						})
+					}
+				
+					componentDidMount() {
+						this.interval = setInterval(this.setTime, 1000)
+					}
+				
+					componentWillUnmount() { //musimy odmontować gdy zamontujemy coś np setInterval setTime itp
+						clearInterval(this.interval);
+					}
+				
+				
+					render() {
+						const { hours, minutes, seconds } = this.state.time;
+						return (
+							<div className="container">
+								<h1>{hours} : {minutes} : {seconds < 10 ? "0" + seconds : seconds}</h1>
+							</div>
+						);
+					}
+				}
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+
+	<!-- START -->
+	<h3 id="Import/Export" class="text-center font-weight-bold mb-5 bg-primary mt-5">IMPORT ORAZ EXPORT MODUŁÓW:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="5" class="text-left ">
+				class...{}
+				export default SwitchButton; //jak exportujemy
+				import SwitchButton from './SwitchButton'; // jak importujemy
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="JSON" class="text-center font-weight-bold mb-5 bg-primary mt-5">POBIERANIE DANYCH Z JSON:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="25" class="text-left ">
+				state = {
+					words: [],
+					isLoaded: false, //warunek na wczyutanie danych gdy w tablicy nic nie ma to łąduje... a gdy już coś będzie to ma załadować zawartość
+				}
+				
+				componentDidMount(){
+					setTimeout(this.fetchData, 3000) //dane są wyświetlanie na stronie po 3 sekundach, ponieważ dane muszą się załadować najpeirw.
+				}
+				
+				fetchData = () =>{ //metoda do pobierania danych
+					fetch('words.json') //wysyłamy żadnie i czekamy na odpowiedz
+					.then(response => response.json())	//co się stanie gdy dostaniemy odpowiedz. .json() - wyodrębnia plik json z tego pluku. Nazwy są dowolne. Jeżeliz amiast: response.json() napiszemy console.log(response); pokaże nam wszystkie opcje dostępne w tej zmiennej
+					.then(data => {this.setState({  	//co ma robić po wczytaniu
+							words: data.words
+							})})
+					}
+					.catch() //co się stanie gdy json się nie załaduje. then gdy się uda
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="FETCH" class="text-center font-weight-bold mb-5 bg-primary mt-5">PRZYKŁAD FETCHA:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="42" class="text-left ">
+				const API = 'https://randomuser.me/api/';
+
+class App extends Component {
+  state = {
+    users: [],
+    isLoaded: false,
+  }
+
+
+   handleClick = () => {
+    fetch(API)
+      .then(response => {
+        if (response.ok) { //sprawdza czy nie ma błędu i wywołuje metode then
+          return response
+        }
+        throw Error(response.status) //wyrzuca error gdy jest błąd i wywołuje emtode catch. Status zawiera numer błędu. Możę być zamiast tego np "Error"
+      })
+      .then(response => response.json()) //wyodrębnia jsona z obiektu response
+      .then(data => { //dostajemy dane jsona
+        console.log(data); //pokazuje nam całego jsona
+        const user = data.results;
+        this.setState(prevState => ({
+          users: prevState.users.concat(user), //zwracamy .results ponieważ tak znajduje się tablica
+        }))
+      })
+      .catch(error => console.log(error + " cos nie tak"))
+  }
+
+  render() {
+
+    return (
+      <div className="app">
+        <button onClick={this.handleClick}>click</button>
+      </div>
+    );
+  }
+}
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="JSONp" class="text-center font-weight-bold mb-5 bg-primary mt-5">PRZYKŁAD JSONa:
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="22" class="text-left ">
+				{
+					"lesson": "animals",
+					"words": [
+							{
+									"id": 1,
+									"en": "cat",
+									"pl": "kot"
+							},
+							{
+									"id": 2,
+									"en": "dog",
+									"pl": "pies"
+							},
+							{
+									"id": 3,
+									"en": "fish",
+									"pl": "ryba"
+							}
+					]
+			}
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="XML" class="text-center font-weight-bold mb-5 bg-primary mt-5">XML HTTPREQUEST - troche gorsza metoda do
+		łądowania danych - tradycyjne podejście
+	</h3>
+	<div class="row" style="margin-left: 250px;">
+		<div class="col-md-6">
+			<div class="container mb-5 ">
+
+				<!-- OBRRAZEK NUMER 1 -->
+
+
+				<!-- KONIEC OBRRAZKA -->
+			</div>
+		</div>
+		<div class="col-md-6">
+			<!-- TEKST NUMER 1 -->
+			<textarea cols="90" rows="22" class="text-left ">
+				componentDidMount(){
+					const xht = new XMLHttpRequest();
+					xhr.open('GET', 'https://...', true); //pobieranie. true - czy połączenie ma być asynchroniczne tak!,
+					xhr.onload = () =>{//funkcja wywoływana gdy dostaniemy odp od serwera
+						console.log(xhr.status);//przechwytuje status
+						console.log(xhr.response);//wyświetla nam całego jsona	
+						if(xhr.status === 200){ //gdy się załaduje
+							const users = JSON.parse(xhr.response); //zamienia stringa w jsona
+							console.log(typeof users); //wyświetla typ users
+							console.log(users); //zwraca tablice users
+							this.setState({users: users}); //aktualizuje nam state
+						} else if(xhr.status === 404){...}
+					}
+					xhr.send(null)
+				}
+					</textarea>
+			<!-- KONIEC TEKSTU-->
+			<!-- TEKST NIEBIESKI -->
+			<textarea cols="90" rows="1" class="text-left bg-info">
+
+													</textarea>
+			<!-- KONIEC TEKSTU -->
+		</div>
+	</div>
+	<!-- KONIEC -->
+
+
+
+	<!-- START -->
+	<h3 id="Sortowanieelementów" class="text-center font-weight-bold mb-5 bg-primary mt-5">SORTOWANIE ELEMENTÓW W TABLICY:
+		// 'a'
+		< 'b' </h3> <div class="row" style="margin-left: 250px;">
+			<div class="col-md-6">
+				<div class="container mb-5 ">
+
+					<!-- OBRRAZEK NUMER 1 -->
+
+
+					<!-- KONIEC OBRRAZKA -->
+				</div>
+			</div>
+			<div class="col-md-6">
+				<!-- TEKST NUMER 1 -->
+				<textarea cols="90" rows="12" class="text-left ">
+					tablica.sort((a, b)=>{
+						if()... 
+						- 1 - jeżeli a < b
+						- -1 - jeżeli a > b
+						- 0 - jeżeli remis 
+						})
+						
+						</textarea>
+				<!-- KONIEC TEKSTU-->
+				<!-- TEKST NIEBIESKI -->
+				<textarea cols="90" rows="1" class="text-left bg-info">
+
+														</textarea>
+				<!-- KONIEC TEKSTU -->
+			</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">REACT ROUTING</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="4" class="text-left ">
+					npm install react-router-dom
+					import {BrowserRouter, Route, NavLink} from 'react-router-dom';
+						
+						</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+														</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT W REACT ROUTING</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						<BrowserRouter>
+							<Route>
+							<Link> //komponenty nawigacyjne zamiast a href
+							<NavLink> //komponenty nawigacyjne zamiast a href, dodaje nam klase active gdy na niego klikniemy. Jeżeli napiszemy exact to tak samo jak wcześniej przypisze nam active do tylko danego. Mozęmy nadać odpowiednią klase przy pomocy: activeClassName="". Lub activeStyle={{background: 'gray'}} - przechwytuje css w formie obiektu
+							<Switch> //Wyświetla tylko 1 komponent a nie wszystkie. Przydaje się do wyświetlania błędu gdy dana podstrona nie istnieje
+						
+						</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+														</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">W PRAKTYCE -<br> musi być
+				BrowserRouter i może być TYLKO 1 element w nim.<br> Zamiast a href to piszemy Link to. <br>Gdy zmieniamy coś w
+				browserRouter to renderujemy za każdym razem od nowa całą zawartość.</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="110" rows="42" class="text-left ">
+<BrowserRouter>
+	<header>
+		<ul>
+			{/*<li><a href="/">Start</a></li>*/}
+			<li><Link to="/contact">Kontakt</Link></li>
+			<li><NavLink to="/contact">Kontakt</NavLink></li> //NavLink dodaje nam klase active gdy na niego klikniemy
+			<li><NavLink exact to="/" activeClassName="nazwaKlasy">Kontakt</NavLink></li> //Przypisuje active tylko do / odpowiednią klase nadaną w activeClassName
+		</ul>
+	</header>
+</BrowserRouter>
+
+
+<section>
+	<Switch> //Wyświetla tylko 1 komponent a nie wszystkie. Przydaje się do wyświetlania błędu gdy dana podstrona nie istnieje
+		<Route component={ErrorComponent}/> //Wyświetla nam ten komponent gdy nie ma takiego adresu url do którego możę coś przypasować. Potrzebny do tego jest komponent <Switch>. Bo inaczej będzie ciągle wyświetlał ErrorComponent.
+		<Route path="/" exact={true / lub nie musi być bo domyślnie jest} component={Contact} /> //exact odpowiada nam za to ze tylko widać dokładną ściezkę. Bo jeżeli nie ma to strona główna i komponent moge być wyświetlony razem.
+		<Route path="/contact" component={Contact} /> //sprawdza za pomocą path czy ścieżka jest z końcówką /contact. Jeżeli tak to wyświetla nam komponent Contact przy pomocy component={}. Jeżeli nie jest taka ścieżka to zwraca null
+		<Route path="/admin" render={() => (console.log(xd))} /> // jeżeli jesteśmyw w zakłądce admin to renderuje w konsoli 'xd'
+		<Route path="/product/:id" component={Products} /> //Dwukropek umożliwia nam tworzenie elementów/podstron i co się dzieje gdy w :id jest jakaś wartość co ma się dzieć
+		- możemy się odwołać przez event aby wyświetlić wszystkie parametry tego dwukropka przez console.log(props);
+		- w match.path jest określona dana ścieżka albo w match.params.page przypisane jest sciezka do naszej zmiennej id
+		- można zapisać kilka rzeczy po slashu np: path="/product/:id/:product" i  wtedy w match.params bedą 2 obiekty
+	</Switch>
+</section>
+							
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="2" class="text-left bg-info">
+							Zamiast patch może być render={()=>{}} i on wywołuje od razu funkcję zamiast komponentu
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">TWORZENIE MENU Z TABLICY:</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="26" class="text-left ">
+						const list = [
+						{ name: "start", path: "/", exact: true },
+						{ name: "product", path: "/products" },
+						{ name: "contact", path: "/contact" },
+						{ name: "admin", path: "/admin" },
+				]
+				
+				const Navigation = () => {
+						const menu = list.map(item => (
+								<li key={item.name}>
+										<NavLink exact={item.exact} to={item.path}>{item.name}</NavLink>
+								</li>
+						))
+						return (
+								<nav className="main">
+										<ul>
+												{menu}
+										</ul>
+								</nav>
+						);
+				}
+				
+				export default Navigation;
+							
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT WARUNKOWY PROMPT -<br>
+				działa kiedy chcemy zmienić adres strony to wywołuje zdarzenie albo wyświetla wiadomość jako alert</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						import { Prompt } from 'react-router-dom';
+						<Prompt 
+						 when={true} //warunek gdy jest spełniony. Gdy jest true to za każdym razem pyta się przed zmienieniem adresu strony i wyświetla. Gdy jest false to wiadomość nie jest wyświetlana. Może być warunek itp. 
+						 message="Wiadomość do wyświetlenia gdy spełniony jest warunek"
+						/>
+							
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">KOMPONENT REDIRECT -<br> odpowiada
+				za
+				zmienianie adresu strony gdy jakiś warunek jest spełniony<br> to nas przekierowywuje do jakieś strony. W tym
+				przypadku do zakłądki login</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="16" class="text-left ">
+						import { Redirect } from 'react-router-dom';
+
+						const AdminPage = () => {
+								const permission = true; //warunek do spełnienia
+								return (
+										<>
+												<Route render={() => (
+														permission ? (<h3>Panel admina</h3>) : (<Redirect to="/login" />) //gdy warunek jest spełniony wywołuje komponent redirect.
+												)} />
+										</>
+								)
+						}
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="Rozdzielanieklaswtablicy" class="text-center font-weight-bold mb-5 bg-primary mt-5">ROZDZIELANIE KLAS W
+				REACT GDY
+				KLASA JEST W TABLICY:</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						const classes = ['one', 'two'];
+
+<h1 className={classes.join(" ")}>Witaj po ostylowaniu</h1> //join - rozdziela nam tablice i dodaje spacje
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="BOOTSTRAP" class="text-center font-weight-bold mb-5 bg-primary mt-5">BOOTSTRAP W REACT</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						npm install bootstrap
+						import 'bootstrap/dist/css/bootstrap.min.css'
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="SASS" class="text-center font-weight-bold mb-5 bg-primary mt-5">SASS W REACT - jak się zainstaluje
+				to można korzystać z scss-a</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						npm install node-sass
+
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="GITHUB" class="text-center font-weight-bold mb-5 bg-primary mt-5">GitHub - VisualStudio</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="1" class="text-left ">
+
+
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">AKTUALIZOWANIE PLIKÓW</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="26" class="text-left ">
+						1. git init - tworzenie repozytorium
+						2. git status - ile jest nbieśledzonych plików
+						3. Wejdz w zakłądke gita w VisualStudio
+						4. Dodaj do śledzenia przez kliknięcie + tam gdzie jest U
+						5. Napisać first commit/commit i Zatwierdzić u góry strzałką. Zamiast first commite możemy wpisywać co zrobiliśmy np add new text roboto albo v1.1
+						6. Można sprawdzić git status (nie powinno być nic)
+						7. git log --oneline - pokazuje ze jest zrobiony commit
+						8. Jak coś zmodyfikujemy to obok pliku jest literka M
+						9. Jak klikniemy to nam się odpali plik(Working Tree) i pokazuje nam zmiany w plikach które nastąpiły
+						10. Zatwierdzamy zmiany np w indexie + i przenosi nam się plik do STATED CHANGES i jak odpalimy nasz plik index to nam pokazuje zmiany w stosunku do poprzedniego commita
+						11. Jak coś zmodyfikujemy to dodajemy jak wcześniej tylko zamiast first commite możemy wpisywać co zrobiliśmy np add new text roboto albo v1.1 i zatwierdzamy strzałką.
+						12. Dodanie pliku nieśledzonego przez githuba. zrób plik w głównym katalogu .gitignore i w środku jego napisz #documentation i pod spodem ścieżkę do pliku który nie chcemy śledzić. Jak jest też w głównym folderze to /nazwa_pliku
+						13. WPROWADZANIE RĘCZNE AKTUALIZACJI: 13.1 - Dodanie do śledzenia: git add . 13.2 - Aktualizacja: git commit -m "creating gitignore"			
+
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">KLONOWANIE FOLDERU Z GITHUBA</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="5" class="text-left ">
+						1. CTR + SHIFT + P i wpisać git clone
+						2. Wklej scieżkę z githuba jaką ma sklonować np: https://github.com/mazurro1/projekt
+						3. Wybierz folder gdzie ma zrobić kopie
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">KLONOWANIE REPOZYTORIUM /
+				WGRYWANIE I AKTUALIZOWANIE</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="5" class="text-left ">
+						git clone adresZgithubaZFolderuzRepo . - klonowanie repo do VisualStudio
+						1. Jak pobierzemy to możemy zaktualizować i wypchnać na gita: git push
+						2. Jak chcemy zaktualizować repozytorium: git pull
+	</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">WGRYWANIE PLIKÓW NA GITHUBA:</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="11" class="text-left ">
+						git remote add origin https://github.com/mazurro1/portfolio.git
+						JAK NIE DZIAŁA:
+						git remote rm origin
+						git remote add origin git@github.com:username/myapp.git
+						1. Stwórz własne repozytorium (jak chcesz od razu dodać to bez readme)
+						2. Wklep komendy w konsoli jakie będą wyświetlone
+						3. Jak coś zaktualizujemy to znowu robimy pusza komendą podaną na stronie: git push -u origin master (za 1 razem)
+						4. Jak znowu coś aktualizujemy to wpisujemy: git push
+							</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+															</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">PUBLIKOWANIE PROJEKTU NA GITHUB
+				PAGES</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="5" class="text-left ">
+						1. Settings -> GitHub Pages
+						2. Przestawiamy na master brunch
+						3. Mamy linka na dole
+	
+								</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+																</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">PUBLIKOWANIE STRONY W REACT NA
+				GITHUB</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="16" class="text-left ">
+							1. Odpal konsole
+							2. npm install --save gh-pages
+							3. Jeżeli mamy react-router na stronie to trzeba do <Router/> dodać: <Router basename={process.env.PUBLIC_URL}/>
+							4. Wchodzimy w package.json i tworzymy "homepage": "adres_z_githuba",. Tworzymy nad "version"
+							5. W skryptach "scripts" dodajemy: "predeploy": "npm run build", "deploy": "gh-pages -d build",
+							6. W konsoli: npm run deploy
+							7. Nasz projekt będzie widniał w branch a nie w folderze głównym
+							8. Zmieniamy na githubie strone która ma być wyświetlana jako 1 (tam gdzie jest link)
+							9. Jak coś aktualizujemy (tylko na strone nie pliki robocze) to: npm run deploy, a jeżeliw szystko chcemy to procedura jak wcześniej.
+		
+									</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+																	</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="ReactRouting" class="text-center font-weight-bold mb-5 bg-primary mt-5">DODAWANIE W README ARESU URL:</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="12" class="text-left ">
+						Zajrzyj [tutaj](https://mazul.pc-tech.pl)
+						# - większe litery można kilka robić koło siebie. # - dużę, ## - troche mniejsze, itp..
+						
+		
+									</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+																	</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+
+
+			<!-- START -->
+			<h3 id="naserwer" class="text-center font-weight-bold mb-5 bg-primary mt-5">WERSJA NA SERWER</h3>
+			<div class="row" style="margin-left: 250px;">
+				<div class="col-md-6">
+					<div class="container mb-5 ">
+
+						<!-- OBRRAZEK NUMER 1 -->
+
+
+						<!-- KONIEC OBRRAZKA -->
+					</div>
+				</div>
+				<div class="col-md-6">
+					<!-- TEKST NUMER 1 -->
+					<textarea cols="90" rows="5" class="text-left ">
+						1. npm run build
+						2. Wszystko mamy w folderze build
+						3. npm instal -g serve
+						3. Aby zobaczyć pliki z builda to: serve -s build
+									</textarea>
+					<!-- KONIEC TEKSTU-->
+					<!-- TEKST NIEBIESKI -->
+					<textarea cols="90" rows="1" class="text-left bg-info">
+
+																	</textarea>
+					<!-- KONIEC TEKSTU -->
+				</div>
+			</div>
+			<!-- KONIEC -->
+
+</body>
+
+</html>
